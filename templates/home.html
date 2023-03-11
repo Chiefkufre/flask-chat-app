@@ -2,7 +2,7 @@
 
 
 {% block content %}
-    <form action="" method="post">
+    <form class="buttons" action="" method="post">
         <h3>Enter the Chat Room</h3>
         <div>
             <label for="name">Name:</label>
@@ -12,7 +12,7 @@
             <input type="text" name="code" placeholder="Room code" value="{{code}}" />
             <button type="submit" name="join">Join a room</button>   
         </div>
-        <button type="submit" name="create">Create a room</button>
+        <button type="submit" name="create" class="create">Create a room</button>
     </form>
 
 {% endblock %}
