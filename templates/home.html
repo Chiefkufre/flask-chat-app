@@ -2,6 +2,14 @@
 
 
 {% block content %}
+
+        <ul class="error">
+            <li>
+                {% if error %}
+                    {{ error }}
+                {% endif %}
+                </li>
+        </ul>
     <form class="buttons" action="" method="post">
         <h3>Enter the Chat Room</h3>
         <div>
