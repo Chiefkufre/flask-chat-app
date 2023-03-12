@@ -3,6 +3,8 @@
 
 {% block content %}
 
+       
+    <form class="buttons" action="" method="post">
         <ul class="error">
             <li>
                 {% if error %}
@@ -10,7 +12,6 @@
                 {% endif %}
                 </li>
         </ul>
-    <form class="buttons" action="" method="post">
         <h3>Enter the Chat Room</h3>
         <div>
             <label for="name">Name:</label>
@@ -21,6 +22,13 @@
             <button type="submit" name="join">Join a room</button>   
         </div>
         <button type="submit" name="create" class="create">Create a room</button>
+         <ul class="error">
+            <li>
+                {% if error %}
+                    {{ error }}
+                {% endif %}
+                </li>
+        </ul>
     </form>
 
 {% endblock %}
