@@ -53,7 +53,7 @@ def home():
             return render_template("home.html", error="room not found", code=code, name=name)
     
 
-        # store user session
+        # set session params
 
         session["room"] = room
         session["name"] = name
@@ -67,9 +67,10 @@ def home():
 def room():
     room = session.get("room")
     name = session.get("name")
+
     if room is None or session.get("room") is None or room not in rooms:
         return redirect(url_for("home"))
-    return render_template("room.html", name=name, code=room)
+    return render_template("room.html",  code=room, messages=rooms[room]["messages"])
 
 
 @socketio.on("message")
@@ -86,7 +87,7 @@ def message(data):
     }
     send(content, to=room)
     rooms[room]["message"].append(content)
-
+  
 
 
 
